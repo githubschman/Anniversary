@@ -22,8 +22,6 @@ namespace Anniversary
 {
 	public class Anniversary : Mod
 	{
-	private AnniversaryInfo AnniversaryInfo;
-
 		private ModConfig Config;
 		// private ModConfig WriteInfo;
 		
@@ -77,14 +75,38 @@ namespace Anniversary
 			Random rnd = new Random();
 			String[] Seasons = {"Spring", "Summer", "Fall", "Winter"};
 
-			// Player is married, but downloaded the mod after they got married. They are assigned a random anniversary.
-			if(this.Config.AnniDay == 0){
 
-				// && Game1.player.isMarried()
+			int daysMarried = Game1.player.daysMarried;
+			float years = daysMarried / 112;
+			double yearsMarried = Math.Floor(years);
+			
+
+			this.Monitor.Log("Wow! You've been married for " + yearsMarried + " years!");
+
+			// Player is married, but downloaded the mod after they got married. They are assigned a random anniversary.
+			if(this.Config.AnniDay == 0 && daysMarried > 1){
+				int index = 0;
+
+				if(Game1.currentSeason == "Summer"){index=1;}
+				if(Game1.currentSeason == "Fall"){index=2;}
+				if(Game1.currentSeason == "Winter"){index=3;}
 				
-				this.Config.AnniDay = rnd.Next(1,28);
-				int num = rnd.Next(1,4);
-				this.Config.AnniSeason = Seasons[num];
+				int day = daysMarried - 0;
+
+				while(day > 28){
+					index++;
+					if(index == 4){
+						index = 0;
+					}
+					day -= 28;
+				}
+
+				this.Config.AnniDay = day;
+				this.Config.AnniSeason = Seasons[index];
+				
+				// this.Config.AnniDay = rnd.Next(1,28);
+				// int num = rnd.Next(1,4);
+				// this.Config.AnniSeason = Seasons[num];
 				
 				this.Helper.WriteJsonFile<ModConfig>(this.DataFilePath, new ModConfig());
 				this.Monitor.Log("anniversary date was saved to: " + this.Config.AnniDay + this.Config.AnniSeason);
@@ -93,12 +115,15 @@ namespace Anniversary
 			
 			this.Monitor.Log("anniversary date is: " + this.Config.AnniDay + this.Config.AnniSeason);
 			this.Monitor.Log("new day started");
+
+			// Enqueue the anniversary letter
 			string spouse = Game1.player.spouse;
-			
-			
+			if(Game1.player.isMarried()){
+				
+			}
 
 			// If they are married, and already have an anniversary set, check to see if anniversary is today:
-			if(Game1.player.isMarried() == true && this.Config.AnniDay >= 1){
+			if(daysMarried > 1 == true && this.Config.AnniDay >= 1){
 				this.Monitor.Log(Game1.player.name + " and " + spouse + "'s anniversary is on... " + this.Config.AnniDay);
 				if(this.Config.AnniDay == Game1.dayOfMonth && this.Config.AnniSeason == Game1.currentSeason){
 					// Game1.mailbox.Enqueue("Happy Birthday!" + Game1.);		
