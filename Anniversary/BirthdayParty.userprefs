@@ -3,7 +3,6 @@
     <Files>
       <File FileName="ModEntry.cs" Line="40" Column="8" />
       <File FileName="Menu.cs" Line="34" Column="16" />
-      <File FileName="Properties/BirthdayInfo.cs" Line="11" Column="1" />
       <File FileName="AnniversaryInfo.cs" Line="9" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>

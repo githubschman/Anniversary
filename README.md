@@ -19,4 +19,4 @@ If you are married before you download this mod, don't worry! Your anniversary d
 
 If you get married while this mod is installed, your wedding day will be your anniversary.
 
-On the day before your anniversary, a letter will be queued to your mailbox, informing you of a special event the next day. Go to the beach on your anniversary and your spouse will give you a special anniversary present!-->
+On the day before your anniversary, a letter will be queued to your mailbox, informing you of a special event. Go outside, and your spouse will give you a special anniversary present!-->
