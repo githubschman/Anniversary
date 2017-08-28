@@ -1,6 +1,6 @@
-# TALKED TO YOU: a mod created for Stardew Valley
+# Stardew Valley Anniversary Mod!
 
-![mod in the wild](https://raw.githubusercontent.com/githubschman/talked-to-you/master/RainbowMod/screencast.gif)
+<!-- ![mod in the wild](https://raw.githubusercontent.com/githubschman/talked-to-you/master/RainbowMod/screencast.gif)
 
 ## How to Play
 
@@ -15,4 +15,4 @@ cd ... /Stardew\ Valley/Contents/MacOS/Mods
 git clone https://github.com/githubschman/talked-to-you
 ```
 
-Press 'Q' in-game to see who you need to talk to, and if they are on the same lot as you!
+Press 'Q' in-game to see who you need to talk to, and if they are on the same lot as you! -->
