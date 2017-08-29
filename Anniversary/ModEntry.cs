@@ -33,6 +33,9 @@ namespace Anniversary
 			//DELETE THIS! JUST FOR TESTING!!!!
 			// //////////////////////////////
 			Game1.mailbox.Enqueue("AnniversaryTomorrow1");
+			Game1.mailbox.Enqueue("AnniversaryTomorrow2");
+			Game1.mailbox.Enqueue("AnniversaryTomorrow3");
+			Game1.mailbox.Enqueue("AnniversaryTomorrow4");
 			Game1.mailbox.Enqueue("Robin");
 			this.Config.AnniDay = 16;
 			this.Config.AnniSeason = "spring";
@@ -46,15 +49,13 @@ namespace Anniversary
 			float years = daysMarried / 112;
 			double yearsMarried = Math.Floor(years);
 			int index = 0;
-
-			this.Monitor.Log("Days Married:" + daysMarried);
-
-			this.Monitor.Log("Wow! You've been married for " + yearsMarried + " years!");
+			string favething = Game1.player.favoriteThing;
 			
 			string spouse = Game1.player.spouse;
 			int numChildren = Game1.player.getNumberOfChildren();
 
-			// Calculate the player's wedding Season and Day. It will write this to a JSON file, so the mod will only need to calculate once per player.
+			// Calculate the player's wedding Season and Day. It will write this to a JSON file (config.json), so the mod will only need to calculate once per player.
+			// Players can also modify config.json data if they want to
 			if(this.Config.AnniDay == 0 && daysMarried > 1){
 				
 				if(Game1.currentSeason == "summer") index=1;
@@ -86,25 +87,29 @@ namespace Anniversary
 
 
 
-			// Enqueue the anniversary letter the day before your anniversary:
+			// Day Before Anniversary:
 			int dayBefore = this.Config.AnniDay - 1;
 			if(dayBefore < 1) dayBefore = 28;
-
 			int indexBefore = index-1;
 			if(indexBefore < 0) index = 3;
 
 			string monthBefore = dayBefore == 28 ? Seasons[indexBefore] : Game1.currentSeason;
-			string favething = Game1.player.favoriteThing;
-
+			
 
 			if(Game1.dayOfMonth == dayBefore && Game1.currentSeason == monthBefore){
+
+				// Your spouse will tell you to check the mail: 
+				string dayBeforeTalk = "Hey, " + Game1.player.name + "... You should check the mail, for no particular reason!";				
+				Dialogue checkYourMail = new Dialogue(dayBeforeTalk, Game1.player.getSpouse());
+				Game1.player.getSpouse().CurrentDialogue.Push(checkYourMail);
+
+				// Enqueue pre-anniversary letter:
 				double mailNum = yearsMarried;
 				if(mailNum > 4) mailNum = 4;
-
 				Game1.mailbox.Enqueue("AnniversaryTomorrow" + mailNum);
-				this.Monitor.Log("It is the day before your Anniversary!");
 			}
 
+			
 			this.Monitor.Log(this.Config.AnniDay + this.Config.AnniSeason);
 			// If they are married, and already have an anniversary set, check to see if anniversary is today:
 			if(daysMarried > 1 && this.Config.AnniDay >= 1){
