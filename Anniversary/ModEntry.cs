@@ -2,6 +2,7 @@
 using StardewModdingAPI;
 using StardewValley;
 using System.IO;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Anniversary
 {
@@ -9,9 +10,7 @@ namespace Anniversary
 	{
 		private ModConfig Config;
 		private bool eventTrigger;
-		
 		private string DataFilePath => Path.Combine("data", $"{Constants.SaveFolderName}.json");
-		private NPC NPC;
 
 		public override void Entry(IModHelper helper)
 		{
@@ -30,8 +29,19 @@ namespace Anniversary
 
 		public void Event_AfterDayStarted(object sender, EventArgs e)
 		{
-		
-			String[] Seasons = {"Spring", "Summer", "Fall", "Winter"};
+
+			//DELETE THIS! JUST FOR TESTING!!!!
+			// //////////////////////////////
+			Game1.mailbox.Enqueue("Wizard");
+
+			this.Config.AnniDay = 16;
+			this.Config.AnniSeason = "spring";
+			this.Helper.WriteJsonFile<ModConfig>(this.DataFilePath, new ModConfig());
+			// /////////////////////////////
+
+			this.Monitor.Log(this.Config.AnniDay + this.Config.AnniSeason + Game1.dayOfMonth + Game1.currentSeason);
+
+			String[] Seasons = {"spring", "summer", "fall", "winter"};
 			int daysMarried = Game1.player.daysMarried;
 			float years = daysMarried / 112;
 			double yearsMarried = Math.Floor(years);
@@ -47,9 +57,9 @@ namespace Anniversary
 			// Calculate the player's wedding Season and Day. It will write this to a JSON file, so the mod will only need to calculate once per player.
 			if(this.Config.AnniDay == 0 && daysMarried > 1){
 				
-				if(Game1.currentSeason == "Summer") index=1;
-				if(Game1.currentSeason == "Fall") index=2;
-				if(Game1.currentSeason == "Winter") index=3;
+				if(Game1.currentSeason == "summer") index=1;
+				if(Game1.currentSeason == "fall") index=2;
+				if(Game1.currentSeason == "winter") index=3;
 				
 				int day = daysMarried - 0;
 
@@ -60,48 +70,63 @@ namespace Anniversary
 					}
 					day -= 28;
 				}
-				
-				index = index > 0 ? index -= 1 : index = 3;
+					
+				if(index > 0) index = index - 1;
+				else index = 3;
 
-				this.Config.AnniDay = day;
-				this.Config.AnniSeason = Seasons[index];
+				this.Monitor.Log("anniversary date SHOULD be set to : " + Seasons[index] + day);
+				// this.Config.AnniDay = day;
+				// this.Config.AnniSeason = Seasons[index];
 
-				this.Helper.WriteJsonFile<ModConfig>(this.DataFilePath, new ModConfig());
-				this.Monitor.Log("anniversary date was saved to: " + this.Config.AnniDay + " of " + this.Config.AnniSeason);
+				// this.Helper.WriteJsonFile<ModConfig>(this.DataFilePath, new ModConfig());
+				// this.Monitor.Log("anniversary date was saved to: " + this.Config.AnniDay + " of " + this.Config.AnniSeason);
 			}
 
+
+
+
 			// Enqueue the anniversary letter the day before your anniversary:
-			int dayBefore = this.Config.AnniDay - 1 == 0 ? this.Config.AnniDay - 1 : 28;
-			int indexBefore = index-1 < 0 ? 3 : index-1;
+			int dayBefore = this.Config.AnniDay - 1;
+			if(dayBefore < 1) dayBefore = 28;
+
+			int indexBefore = index-1;
+			if(indexBefore < 0) index = 3;
+
 			string monthBefore = dayBefore == 28 ? Seasons[indexBefore] : Game1.currentSeason;
 			string favething = Game1.player.favoriteThing;
 
-			if(Game1.dayOfMonth == dayBefore && Game1.currentSeason == monthBefore){
-				
-				string talk = Game1.player.name + ", I can't believe we've been married for " + yearsMarried + (yearsMarried > 1 ? "years" : "year") + " or " + daysMarried + ". Yes, I've been keeping count! Every day with you is so special. And I know you love me more than you love " + favething + "! You are the greatest " + (Game1.player.IsMale ? "husband" : "wife") + (numChildren < 1 ? " in Stardew Valley!" : " and parent!");
 
+			if(Game1.dayOfMonth == dayBefore && Game1.currentSeason == monthBefore){
 				// Game1.mailbox.Enqueue("anniversaryTomorrow");
-				Dialogue happyAnniversaryBabe = new Dialogue(talk, Game1.player.getSpouse());
-				Game1.player.getSpouse().CurrentDialogue.Push(happyAnniversaryBabe);
 				this.Monitor.Log("It is the day before your Anniversary!");
 			}
-			
+			this.Monitor.Log(this.Config.AnniDay + this.Config.AnniSeason);
 			// If they are married, and already have an anniversary set, check to see if anniversary is today:
-			if(daysMarried > 1 == true && this.Config.AnniDay >= 1){
+			if(daysMarried > 1 && this.Config.AnniDay >= 1){
+
 				if(this.Config.AnniDay == Game1.dayOfMonth && this.Config.AnniSeason == Game1.currentSeason){
 					eventTrigger = true;
-					if(Context.IsWorldReady){
-						Game1.showGlobalMessage("Happy " + yearsMarried + " Anniversary, " + Game1.player.name + " & " + spouse + "!");
-						this.Monitor.Log("Happy Anniversary!");	
-					}
+					string sweetTalk = Game1.player.name + ", I can't believe we've been married for " + yearsMarried + (yearsMarried > 1 ? " years" : " year") + " or " + daysMarried + " days. Yes, I've been keeping count! Every day with you is so special. And I know you love me more than you love " + favething + "! You are the greatest " + (Game1.player.IsMale ? "husband" : "wife") + (numChildren < 1 ? " in Stardew Valley!" : " and parent!$l");
+					Dialogue happyAnniversaryBabe = new Dialogue(sweetTalk, Game1.player.getSpouse());
+					Game1.player.getSpouse().CurrentDialogue.Push(happyAnniversaryBabe);
 				}
 			}
 		}
 
 		public void Event_LocationChanged(object sender, EventArgs e)
 		{
-			if(Game1.currentLocation.ToString() == "Beach" && eventTrigger){
-				this.Monitor.Log("Anniversary event should be triggered, y'all!");
+			
+			if(Game1.currentLocation.name == "Town" && eventTrigger && Context.IsWorldReady){
+				Game1.showGlobalMessage("Memories of your wedding day come flooding back!");
+
+				Game1.currentSong.Stop(AudioStopOptions.Immediate);
+				Game1.currentSong.Stop(AudioStopOptions.AsAuthored);
+				Game1.currentSong = null;
+				Game1.playSound("wedding");
+				
+				eventTrigger = false;
+			}else{
+				Game1.currentSong.Resume();
 			}
 		}
 		
