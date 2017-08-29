@@ -15,40 +15,14 @@ xnbData:
 
     numSharedResources: 0
 
+
+
+
 content:  #!Dictionary<String,String>
-    AlexBirth: "@,^I wanted to remind you that today is Alex's birthday. ^You can't get strong like him without eating some nutritious meals!^  -Lewis" #!String
-    ElliottBirth: "@,^I wanted to remind you that today is Elliott's birthday. ^That man sure loves the ocean. I bet salty foods don't bother him at all!^  -Lewis" #!String
-    HarveyBirth: "@,^I wanted to remind you that today is Harvey's birthday. ^For someone working as a doctor, it sure is odd to see him at the saloon so often with a drink in his hand...^  -Lewis" #!String
-    SamBirth: "@,^I wanted to remind you that today is Sam's birthday. ^The boy acts tough sometimes, but he really is sweet when he wants to be.^  -Lewis" #!String
-    SebastianBirth: "@,^I wanted to remind you that today is Sebastian's birthday. ^He might look and act a bit depressed, but he sure loves to learn about the unknown!^  -Lewis" #!String
-    AbigailBirth: "@,^I wanted to remind you that today is Abigail's birthday. ^She is so sweet, and so is her taste!^  -Lewis" #!String
-    HaleyBirth: "@,^I wanted to remind you that today is Haley's birthday. ^I bet it takes some serious work to keep a figure like that!^  -Lewis" #!String
-    LeahBirth: "@,^I wanted to remind you that today is Leah's birthday. ^Such a healthy girl, working hard every day. No wonder she looks so slim and strong!^  -Lewis" #!String
-    MaruBirth: "@,^I wanted to remind you that today is Maru's birthday. ^I saw her sneaking into the mines at one point. I wonder what she wanted from there...^  -Lewis" #!String
-    PennyBirth: "@,^I wanted to remind you that today is Penny's birthday. ^A very fragile girl, but with such a strong heart...^  -Lewis" #!String
-    CarolineBirth: "@,^I wanted to remind you that today is Caroline's birthday. ^She often walks around in summer time, picking up some flowers. So peaceful...^  -Lewis" #!String
-    ClintBirth: "@,^I wanted to remind you that today is Clint's birthday. ^He sure is a man of his own work!^  -Lewis" #!String
-    DemetriusBirth: "@,^I wanted to remind you that today is Demetrius' birthday. ^I heard that spring fruits really sing to his soul!^  -Lewis" #!String
-    DwarfBirth: "@,^I wanted to remind you that today is Dwarf's birthday. ^He just sits in the mines all day and night, doesn't he? He sure is an odd one...^  -Lewis" #!String
-    EmilyBirth: "@,^I wanted to remind you that today is Emily's birthday. ^She must love her red dress. It looks so good on her!^  -Lewis" #!String
-    EvelynBirth: "@,^I wanted to remind you that today is Evelyn's birthday. ^Such a sweet old lady, and so lovely to be around. Her care for George is something special.^  -Lewis" #!String
-    GeorgeBirth: "@,^I wanted to remind you that today is George's birthday. ^An old man with an old taste pallet.^  -Lewis" #!String
-    GusBirth: "@,^I wanted to remind you that today is Gus' birthday. ^I would guess he is from Mexico... but I really can't tell.^  -Lewis" #!String
-    JasBirth: "@,^I wanted to remind you that today is Jas' birthday. ^A sweet little girl she is. I hope she will grow up as pretty and happy as she is now.^  -Lewis" #!String
-    JodiBirth: "@,^I wanted to remind you that today is Jodi's birthday. ^Her taste pallet really matches that of a great mom!^  -Lewis" #!String
-    KentBirth: "@,^I wanted to remind you that today is Kent's birthday. ^I wonder what things he saw during his service... I heard the military gave them nuts for breakfast!^  -Lewis" #!String
-    KrobusBirth: "@,^I wanted to remind you that today is Krobus' birthday. ^That thing really freaks me out... who knew it lived right below us! Like the void itself...^  -Lewis" #!String
-    LewisBirth: "@,^I wanted to remind you that today is my birthday. ^I know you might think it is selfish of me to remind you of that... but I like gifts too!^  -Lewis" #!String
-    LinusBirth: "@,^I wanted to remind you that today is Linus' birthday. ^I wish he would understand that we welcome him more than he thinks...^  -Lewis" #!String
-    MarnieBirth: "@,^I wanted to remind you that today is Marnie's birthday. ^The work she does around animals is amazing! She is a true farmer.^  -Lewis" #!String
-    PamBirth: "@,^I wanted to remind you that today is Pam's birthday. ^That lady spends way too much time in the saloon, don't you think?^  -Lewis" #!String
-    PierreBirth: "@,^I wanted to remind you that today is Pierre's birthday. ^Our town would suffer greatly from his loss. Let's hope that Joja Mart never gets to him...^  -Lewis" #!String
-    RobinBirth: "@,^I wanted to remind you that today is Robin's birthday. ^She works hard on all of her projects, and I heard she wanted to have goats at some point. I wonder if she still wants them...^  -Lewis" #!String
-    SandyBirth: "@,^I wanted to remind you that today is Sandy's birthday. ^She mentioned that you got the bus working again somehow... Amazing!^  -Lewis" #!String
-    ShaneBirth: "@,^I wanted to remind you that today is Shane's birthday. ^If I had to guess, I'd say he moved in right after college, but I know better than that.^  -Lewis" #!String
-    VincentBirth: "@,^I wanted to remind you that today is Vincent's birthday. ^His mother should really go easy on him. She seems a bit overprotective, don't you agree?^  -Lewis" #!String
-    WillyBirth: "@,^I wanted to remind you that today is Willy's birthday. ^Man of the sea. He will never get tired of telling his stories... I just hope I won't have to go into his shop any time soon. The smell is revolting!^  -Lewis" #!String
-    WizardBirth: "@,^I wanted to remind you that today is Wizard's birthday. ^Give him something magical, maybe he will use it in his next ritual!^  -Lewis" #!String
+    AnniversaryTomorrow1: "My Dearest @,^Tomorrow marks our very first wedding anniversary! Please accept this gift as a token of my deep, unwavering love for you.^ -Your One True Love %item object 422 1 82 1 84 1 70 1 %%" #!String
+    AnniversaryTomorrow2: "My Dearest @,^Tomorrow marks our second wedding anniversary! You make every day so beautiful. Please accept this gift- it's almost as sweet as you!^ -Your One True Love %item object 223 1 %%" #!String
+    AnniversaryTomorrow3: "My Dearest @,^Tomorrow marks our third wedding anniversary! I remember our wedding like it was just yesterday, especially the savory and delicious slice of wedding cake we shared.^ -Your One True Love %item object 221 1 %%" #!String
+    AnniversaryTomorrow4: "My Dearest @,^Another year has passed, and I'm still crazy about you! You are the light of my life. I can't wait to grow old with you! Enjoy this gift, as I've enjoyed all of our years together.^ -Your One True Love %item object 434 1 %%" #!String
     Robin: "Hey there!^I had some extra wood lying around... I thought maybe you could use it. Take care!  ^   -Robin %item object 388 50 %%" #!String
     Demetrius: "Dear @,^I was conducting a field study the other day, and I found this specimen. ^I hope you find it as interesting as I did.    ^   -Demetrius%item object 392 1 394 1 132 1 66 1 %%" #!String
     Linus: "Hello, friend.^The mountain lake has been kind to me lately. I'd like to share my good fortune with you.  ^   -Linus %item object 136 1 143 1 202 1 227 1 228 1 %%" #!String
@@ -67,15 +41,6 @@ content:  #!Dictionary<String,String>
     Shane: "Hey,^I thought it would be fun to send you a letter. I don't really know what to write, though.^ Here, I've enclosed a treat for you. Don't tell anyone, but I snagged this from the back room of JojaMart ages ago.^Okay, see you soon. ^   -Shane %item object 215 1 206 1 %%" #!String
     Wizard: "Greetings, young adept.^I have enclosed in this package an item of arcane significance. Use it wisely.   ^   -M. Rasmodius, Wizard%item object 422 1 82 1 84 1 70 1 %%" #!String
     Sandy: "Greetings from Calico Desert!^Come visit me soon, I'm really bored out here :(. I've included a gift from the desert. You can come and thank me in person!   ^   -Sandy %item object 88 1 90 1 218 1 %%" #!String
-    afterSamShow: "@,^the show was a rockin' success! I wanted to say thanks again for all your help in creating this amazing band. We couldn't have done it without you!   ^   -Sam" #!String
-    afterArtShow: "Dear @,^Thanks again for coming to my art show. It was such a success! I sold nearly all of my sculptures, and everyone was so positive and encouraging! I hope to see you again soon.  ^   -Leah" #!String
-    haleyGarden: "@,^I thought it would be fun to write you a note.^ I had so much fun with the cows yesterday... I'm starting to understand why you chose the farmer's life! Hope to see you soon.  ^   -Haley" #!String
-    PennyCleanTrailer: "Sorry about what happened at my place yesterday... My mom can get into bad moods sometimes.^Please just forget it happened.  ^   -Penny" #!String
-    Duck: "Dear @,^You've proven your ability to raise chickens, so I'm now selling ducks at my shop!       ^   -Marnie" #!String
-    Rabbits: "Dear @,^I now have rabbits in the animal shop! They will provide you with fluffy wool ...and more!       ^   -Marnie" #!String
-    Sheep: "Dear @,^You've proven your ability to raise cows, so I'm now selling sheep at my shop!       ^   -Marnie" #!String
-    Goats: "Dear @,^I now have goats available for purchase at the animal shop. You've done well so far!       ^   -Marnie" #!String
-    Pigs: "Dear @,^You've come a long way since you first arrived. As a result, I've decided to start selling pigs at my shop. These pigs are trained at finding gourmet truffles!       ^   -Marnie" #!String
     SeaAmulet: "@,^I'm going to give you this advice because I like you and I want you to stay in Pelican Town. If there comes a day that you want to ask for someone's hand in marriage, you'll need to give them a 'Mermaid's Pendant'. Don't worry, everyone in Pelican Town understands the significance of the amulet. It's an ancient tradition in this region. Good luck! ^   -Lewis" #!String
     Bouquet: "@,^It seems like you're starting to get close with some of the townspeople. If you want to show someone that you're romantically interested, you've got to give them one of my beautiful flower bouquets. I'm selling them now, for a very fair price! If you want to start a family someday, this is the first step! ^   -Pierre" #!String
     RobinCooking: "Dear @,^here is an old recipe that my grandma passed down to me. Enjoy!   ^   -Robin%item cookingRecipe %%" #!String

@@ -32,8 +32,8 @@ namespace Anniversary
 
 			//DELETE THIS! JUST FOR TESTING!!!!
 			// //////////////////////////////
-			Game1.mailbox.Enqueue("Wizard");
-
+			Game1.mailbox.Enqueue("AnniversaryTomorrow1");
+			Game1.mailbox.Enqueue("Robin");
 			this.Config.AnniDay = 16;
 			this.Config.AnniSeason = "spring";
 			this.Helper.WriteJsonFile<ModConfig>(this.DataFilePath, new ModConfig());
@@ -75,6 +75,7 @@ namespace Anniversary
 				else index = 3;
 
 				this.Monitor.Log("anniversary date SHOULD be set to : " + Seasons[index] + day);
+				// add this back in for production:
 				// this.Config.AnniDay = day;
 				// this.Config.AnniSeason = Seasons[index];
 
@@ -97,9 +98,13 @@ namespace Anniversary
 
 
 			if(Game1.dayOfMonth == dayBefore && Game1.currentSeason == monthBefore){
-				// Game1.mailbox.Enqueue("anniversaryTomorrow");
+				double mailNum = yearsMarried;
+				if(mailNum > 4) mailNum = 4;
+
+				Game1.mailbox.Enqueue("AnniversaryTomorrow" + mailNum);
 				this.Monitor.Log("It is the day before your Anniversary!");
 			}
+
 			this.Monitor.Log(this.Config.AnniDay + this.Config.AnniSeason);
 			// If they are married, and already have an anniversary set, check to see if anniversary is today:
 			if(daysMarried > 1 && this.Config.AnniDay >= 1){
