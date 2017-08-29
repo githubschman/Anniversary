@@ -9,7 +9,7 @@ Get the latest version of SMAPI, an open-source modding API for Stardew Valley
 https://github.com/Pathoschild/SMAPI/releases
 ```
 
-Step One: Add 'Anniversary to your mods folder:
+Step One: Add Anniversary to your mods folder:
 ```
 cd (... filepath)/Stardew\ Valley/Contents/MacOS/Mods
 git clone https://github.com/githubschman/Anniversary
