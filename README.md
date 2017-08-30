@@ -32,7 +32,7 @@ If you are married before you download this mod, don't worry! Your anniversary d
 
 Once your anniversary date is calculated, it will be written to the mod's config.json file. Feel free to edit this file for testing, or if you just want to make your anniversary come a bit sooner! ;) 
 
-![mod in the wild](https://raw.githubusercontent.com/githubschman/Anniversary/master/Anniversary/images/animail.png)
+![mod in the wild](https://raw.githubusercontent.com/githubschman/Anniversary/master/Anniversary/images/annimail.png)
 
 On the day before your anniversary, a letter will be queued to your mailbox from your spouse (which is weird because you live together, but whatever) containing a special anniversary present. On the day of your anniversary, your spouse will say a sweet message, based off of how many years you've been married, whether you have children, and what you specified as your "favorite thing" in the beginning of the game. 
 
