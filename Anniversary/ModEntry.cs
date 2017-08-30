@@ -75,7 +75,7 @@ namespace Anniversary
 			int indexBefore = index-1;
 			if(indexBefore < 0) index = 3;
 			
-			string monthBefore = Game1.currentSeason;
+			string monthBefore = Seasons[index];
 			if(dayBefore == 28) monthBefore = Seasons[indexBefore];
 			
 			if(Game1.dayOfMonth == dayBefore && Game1.currentSeason == monthBefore){
